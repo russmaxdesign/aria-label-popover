@@ -1,0 +1,23 @@
+button {
+  position: relative;
+}
+
+button[aria-label]:focus:after,
+button[aria-label]:hover:after {
+  position: absolute;
+  z-index: 1;
+  top: -2em;
+  left: 0;
+  display: block;
+  overflow: hidden;
+  width: 17em;
+  height: 2em;
+  border-radius: .2em;
+  padding: 0 .7em;
+  content: attr(aria-label);
+  color: #fff;
+  background: #000;
+  font-size: 1em;
+  line-height: 2em;
+  text-align: left;
+}

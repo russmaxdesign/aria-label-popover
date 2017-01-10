@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Styling the aria-label attribute to act like a popover</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Styling the aria-label attribute to act like a popover</h1>
+    <p><a href="https://github.com/russmaxdesign/aria-label-popover">Github Page</a></p>
+
+    <p>A quick and dirty demonstration showing how to display the aria-label
+    information of a button on hover or when the element receives focus.</p>
+
+    <h2>Examples</h2>
+    <p>
+      <button
+        class="button-secondary"
+        type="button"
+        aria-label="Some additional aria-label information">
+        Some text
+      </button>
+    </p>
+    <p>
+      <button
+        class="button-secondary"
+        type="button"
+        aria-label="Close and return to Bank Balance information">
+        X
+      </button>
+    </p>
+    <hr>
+
+    <h2>Code</h2>
+    <figure>
+      <figcaption class="markup-heading">Markup</figcaption>
+<pre><code class="language-markup">&lt;button
+  type="bubtton"
+  aria-label="Close and return to Bank Balance information"
+&gt;
+  X
+&lt;/button&gt;
+</code></pre>
+    </figure>
+
+    <figure>
+      <figcaption class="markup-heading">CSS</figcaption>
+<pre><code class="language-css">button {
+  position: relative;
+}
+
+button[aria-label]:focus:after,
+button[aria-label]:hover:after {
+  position: absolute;
+  z-index: 1;
+  top: -2em;
+  left: 0;
+  display: block;
+  overflow: hidden;
+  width: 17em;
+  height: 2em;
+  border-radius: .2em;
+  padding: 0 .7em;
+  content: attr(aria-label);
+  color: #fff;
+  background: #000;
+  font-size: 1em;
+  line-height: 2em;
+  text-align: left;
+}
+</code></pre>
+    </figure>
+    <hr>
+
+    <p style="margin-top: 2em;"><a href="https://github.com/russmaxdesign/aria-label-popover">Github Page</a></p>
+  </div>
+
+<script src="assets/js/prism.js"></script>
+</body>
+</html>
